@@ -1,0 +1,12 @@
+predictions = [{"input": 1, "output": 0}, {"input": 2, "output": 1}]
+bias_threshold = 0.2
+
+def ai_model_compliance(preds):
+    # Fake example: fraction of 1s must not exceed threshold
+    ones = sum([p["output"] for p in preds])
+    bias = ones / len(preds)
+    if bias > bias_threshold:
+        return "AI Compliance Alert: Model bias exceeds threshold"
+    return "Model compliant"
+
+print(ai_model_compliance(predictions))
